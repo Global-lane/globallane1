@@ -114,6 +114,52 @@
         </div>
     </section>
 
+    <div class="popup-form" id="popupForm">
+        <div class="popup-content">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <div class="popup-logo">
+                <img src="Globallane.png" alt="Global Lane Logo">
+            </div>
+            <h2 class="text-center">Client Details</h2>
+            <form>
+                <div class="form-group">
+                    <label for="clientName">Full Name</label>
+                    <input type="text" class="form-control" id="clientName" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="clientEmail">Email</label>
+                    <input type="email" class="form-control" id="clientEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Phone Number</label>
+                    <input type="text" class="form-control" id="clientPhone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="productInterest">Interested Product</label>
+                    <select class="form-control" id="productInterest">
+                        <option>Arabica Coffee Beans</option>
+                        <option>Organic Pepper</option>
+                        <option>Premium Cardamom</option>
+                        <option>Raw Coffee Beans</option>
+                        <option>Basmati Rice</option>
+                        <option>Other Product Interested</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="otherProduct">If Other, Specify</label>
+                    <input type="text" class="form-control" id="otherProduct" placeholder="Specify other product">
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity (kg/tons):</label>
+                    <input type="text" id="quantity" class="form-control" placeholder="Enter quantity" required>
+                </div>
+                <button type="submit" class="btn1 btn-primary btn-block">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    
+
     <!-- Footer -->
     <footer class="footer bg-dark text-white py-4">
         <div class="container">
@@ -158,5 +204,18 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Automatic Pop-Up Script
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                document.getElementById("popupForm").style.display = "block";
+            }, 2000); // Adjust the timing as needed
+        });
+
+        // Close Button Script
+        document.getElementById("closeBtn").onclick = function () {
+            document.getElementById("popupForm").style.display = "none";
+        };
+    </script>
 </body>
 </html>

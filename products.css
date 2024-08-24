@@ -227,3 +227,396 @@ body {
         height: 180px;
     }
 }
+
+
+
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    overflow: auto;
+}
+
+.popup-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px; /* Reduced width for mobile view */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+    animation: popupAnimation 0.5s ease-in-out;
+}
+
+@keyframes popupAnimation {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1100; /* Ensure it sits above other elements */
+}
+
+.close-btn:hover {
+    color: #e74c3c;
+}
+
+.popup-logo img {
+    display: block;
+    margin: 0 auto 10px; /* Reduced bottom margin for mobile view */
+    max-width: 120px; /* Adjusted for mobile view */
+    height: auto;
+}
+
+.popup-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 12px; /* Reduced margin for mobile view */
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px; /* Reduced padding for mobile view */
+    font-size: 14px; /* Reduced font size for mobile view */
+    color: #333;
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 16px;
+    padding: 10px; /* Reduced padding for mobile view */
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    outline: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .popup-content {
+        padding: 15px;
+        width: 90%;
+        max-width: 400px; /* Further reduced width for tablets and smaller devices */
+    }
+
+    .popup-logo img {
+        max-width: 100px; /* Reduced for tablets */
+    }
+
+    .popup-content h2 {
+        font-size: 18px;
+    }
+
+    .form-control {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        padding: 10px;
+        width: 95%;
+        max-width: 350px; /* Further reduced width for mobile phones */
+    }
+
+    .popup-logo img {
+        max-width: 80px;
+    }
+
+    .popup-content h2 {
+        font-size: 16px;
+    }
+
+    .form-control {
+        font-size: 11px;
+        padding: 6px;
+    }
+
+    .btn-primary {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .close-btn {
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        z-index: 1100; /* Ensure it sits above other elements */
+    }
+}
+
+
+/* Ensure the CSS class for buttons is properly defined */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    display: block;
+    width: 100%; /* Ensure it spans the full width of its container */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    outline: none;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    overflow: auto; /* Allows scrolling if content exceeds viewport */
+}
+
+.popup-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px; /* Adjusted width for mobile view */
+    max-height: 90vh; /* Ensure the form fits within the viewport */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+    overflow-y: auto; /* Allows scrolling within the form if needed */
+    animation: popupAnimation 0.5s ease-in-out;
+}
+
+@keyframes popupAnimation {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1100; /* Ensure it sits above other elements */
+}
+
+.close-btn:hover {
+    color: #e74c3c;
+}
+
+.popup-logo img {
+    display: block;
+    margin: 0 auto 10px; /* Reduced bottom margin for mobile view */
+    max-width: 120px; /* Adjusted for mobile view */
+    height: auto;
+}
+
+.popup-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 12px; /* Reduced margin for mobile view */
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px; /* Reduced padding for mobile view */
+    font-size: 14px; /* Reduced font size for mobile view */
+    color: #333;
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 16px;
+    padding: 10px; /* Reduced padding for mobile view */
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    outline: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .popup-content {
+        padding: 15px;
+        width: 90%;
+        max-width: 400px; /* Further reduced width for tablets and smaller devices */
+    }
+
+    .popup-logo img {
+        max-width: 100px; /* Reduced for tablets */
+    }
+
+    .popup-content h2 {
+        font-size: 18px;
+    }
+
+    .form-control {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        padding: 10px;
+        width: 95%;
+        max-width: 350px; /* Further reduced width for mobile phones */
+    }
+
+    .popup-logo img {
+        max-width: 80px;
+    }
+
+    .popup-content h2 {
+        font-size: 16px;
+    }
+
+    .form-control {
+        font-size: 11px;
+        padding: 6px;
+    }
+
+    .btn-primary {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .close-btn {
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        z-index: 1100; /* Ensure it sits above other elements */
+    }
+}
